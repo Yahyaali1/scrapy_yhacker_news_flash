@@ -17,6 +17,9 @@ def main():
 
 
 def readFile():
+    """
+    Reads the job id of last job post that was scrapped
+    """
     try:
         print(os.path.join(sys.path[0], LAST_JOB_ID_FILE))
         with open(os.path.join(sys.path[0], LAST_JOB_ID_FILE)) as file:
@@ -34,6 +37,9 @@ def readFile():
 
 
 def load_command():
+    """
+    Loads respective command based on the last job id or number of pages to scrap
+    """
     last_job_id = readFile()
     if last_job_id is None:
         return NUMBER_OF_PAGES_STRING

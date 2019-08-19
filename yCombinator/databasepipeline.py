@@ -1,9 +1,9 @@
-# -*- coding: utf-8 -*-
-
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+"""
+Connects to database for storing parsed records.
+Setups database connection
+Contains methods for checking duplicates. 
+Updates last scraped job id for future usuage
+"""
 
 import sqlite3
 import logging
@@ -86,6 +86,12 @@ class YcombinatorDataBasePipeline(object):
         return self.curr.lastrowid
 
     def __save_data(self, data: []):
+        """
+        Loops through all parsed items. 
+        Insert new record for company and job posting.
+        Avoids insertion if the job post is already in database.
+        Returns null or latest job id that was inserted into database. 
+        """
         last_job_id = None
         for job in data:
             exist, row_db = self.__job_exist(job[DataKeys.JOB_MSG])

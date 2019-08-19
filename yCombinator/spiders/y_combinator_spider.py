@@ -20,6 +20,11 @@ class YCombinatorSpider(Spider):
 
     # Return based on the job url else extract and continue
     def init_values(self, last_job_id, no_of_pages):
+        """
+        Init:
+        items array for keeping scrapped records. 
+        no of pages | last_job_id as base condition for stopping scrapper.
+        """
         self.items = []
         if last_job_id is None:
             if no_of_pages is None:
