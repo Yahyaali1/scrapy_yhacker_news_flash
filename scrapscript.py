@@ -2,6 +2,7 @@ import os
 import json
 import subprocess
 import sys
+import logging
 
 DEFAULT_NUMBER_OF_PAGES = 2
 SCRAPY_CRAWL_STRING = "scrapy crawl news.ycombinator -a "
@@ -24,10 +25,11 @@ def readFile():
                 value = data['id']
                 return value
             except Exception:
-                print("LAST JOB ID NOT FOUND")
+                logging.warning("LAST JOB ID NOT FOUND")
                 return None
     except Exception:
-        print("FILE DOES NOT EXIST")
+        logging.warning(
+            "FILE DOES NOT EXIST WILL BE CREATED AT THE END OF FIRST CYCLE")
     return None
 
 

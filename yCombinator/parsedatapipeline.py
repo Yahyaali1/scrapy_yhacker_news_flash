@@ -1,4 +1,5 @@
 import re
+import logging
 
 from .datakeys import DataKeys
 
@@ -16,7 +17,7 @@ class YcombinatorParseDataPipeline(object):
         # Split the sentence based on given tokens
         data_sentence_split = re.split(
             regex_sentence_split, item["job_msg"], 1)
-        print(data_sentence_split)
+
         # Is split was successful extract company name and other data
         if len(data_sentence_split) > 1:
             # Extract company data after removing brackets.
@@ -27,7 +28,7 @@ class YcombinatorParseDataPipeline(object):
             job_title_split = re.split(
                 regex_location,
                 data_sentence_split[len(data_sentence_split)-1], 1)
-            print(job_title_split)
+
             item[DataKeys.POSITION] = job_title_split[0]
 
             if len(job_title_split) > 1:
@@ -44,4 +45,4 @@ class YcombinatorParseDataPipeline(object):
             else:
                 item[DataKeys.COMPANY_NAME] = "Not Given"
             item[DataKeys.JOB_TITLE] = item[DataKeys.JOB_MSG]
-        print(item)
+        logging.info("Parsed Item "+item)

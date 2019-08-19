@@ -1,4 +1,5 @@
 import scrapy
+import logging
 from scrapy.spiders import Spider
 from scrapy.selector import Selector
 
@@ -63,7 +64,6 @@ class YCombinatorSpider(Spider):
         if scrap_next_page and self.page_count < self.scrap_pages:
             next_link = sel.xpath('.//a[@class="morelink"]/@href').get()
             if next_link is not None:
-                print(next_link)
                 yield scrapy.Request(self.base_url+next_link, callback=self.parse)
-        print(len(self.items))
+        logging.info("Items scrapped " + str(len(self.items)))
         yield {'items': self.items}
