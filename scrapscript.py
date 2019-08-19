@@ -17,6 +17,7 @@ def main():
 
 def readFile():
     try:
+        print(os.path.join(sys.path[0], LAST_JOB_ID_FILE))
         with open(os.path.join(sys.path[0], LAST_JOB_ID_FILE)) as file:
             data = json.load(file)
             try:

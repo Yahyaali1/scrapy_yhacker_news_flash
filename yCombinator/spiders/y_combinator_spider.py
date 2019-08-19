@@ -24,7 +24,7 @@ class YCombinatorSpider(Spider):
             if no_of_pages is None:
                 self.scrap_pages = DEFAULT_PAGE_COUNT
             else:
-                self.scrap_pages = no_of_pages
+                self.scrap_pages = int(no_of_pages)
             self.scrap_pages_count_flag = True
         else:
             self.scrap_pages_count_flag = False

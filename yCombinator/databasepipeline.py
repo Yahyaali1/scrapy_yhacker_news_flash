@@ -119,7 +119,6 @@ class YcombinatorDataBasePipeline(object):
                 outfile.close()
 
     def close_spider(self, spider):
-        print(spider.items)
-        self.save_data(spider.items)
+        self.update_last_job_id(self.save_data(spider.items))
         self.commit_changes()
         self.close_connection()

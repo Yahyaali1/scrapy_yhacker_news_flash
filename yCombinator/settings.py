@@ -70,7 +70,7 @@ ITEM_PIPELINES = {
 }
 
 SQL_DB_NAME = "./sql_lite.db"
-LAST_JOB_ID_RECORD = "job.json"
+LAST_JOB_ID_RECORD = "./job.json"
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
