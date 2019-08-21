@@ -11,8 +11,8 @@ class YcombinatorParseDataPipeline(object):
 
     def parse_data(self, item):
         """
-        Splits the job posting string based on keywords such as hiring hires & wants etc. 
-        Extracts company name based out of processed string. 
+        Splits the job posting string based on keywords such as hiring hires & wants etc.
+        Extracts company name based out of processed string.
         Extracts job location and job title based on regex_location.
         """
         regex_website_split = r"(\.)"
@@ -49,5 +49,4 @@ class YcombinatorParseDataPipeline(object):
                 item[DataKeys.COMPANY_NAME] = company_name_split[0]
             else:
                 item[DataKeys.COMPANY_NAME] = "Not Given"
-            item[DataKeys.JOB_TITLE] = item[DataKeys.JOB_MSG]
-        logging.info("Parsed Item "+item)
+            item[DataKeys.POSITION] = item[DataKeys.JOB_MSG]
