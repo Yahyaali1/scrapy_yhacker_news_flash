@@ -14,7 +14,7 @@
 #### Change default pages scraped
 - Open "scrapscript.py"
 - Change the value for variable ``DEFAULT_NUMBER_OF_PAGES = 2``
-
+- To change db name refer to yCombinator/settings.py ``SQL_DB_NAME``
 #### You will need following things to schedule a job on windows:
 - Path to python.exe:  <br />
   Run following script in your cmd if you are not aware of the location for python.exe <br />
