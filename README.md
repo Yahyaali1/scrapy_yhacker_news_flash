@@ -29,4 +29,6 @@
 - Fill in details such as "task name" under general tab. 
 - Clicking "Ok" on this window will save the task for you. After you have saved the task you need to select the task and run it. 
 
+#### Assumptions 
+- Python > 3
 
