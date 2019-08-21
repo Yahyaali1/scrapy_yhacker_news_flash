@@ -10,7 +10,7 @@
 - Clone/extract project files in your local drive 
 - Create virtual enviornment under your project dir
 - To install project dependencies run 
-  `` pip install requirements.txt``
+  `` pip -r install requirements.txt``
 #### Change default pages scraped
 - Open "scrapscript.py"
 - Change the value for variable ``DEFAULT_NUMBER_OF_PAGES = 2``
