@@ -69,7 +69,7 @@ ITEM_PIPELINES = {
     'yCombinator.databasepipeline.YcombinatorDataBasePipeline': 200,
 }
 
-SQL_DB_NAME = "./sql_lite.db"
+SQL_DB_NAME = "sql_lite.db"
 LAST_JOB_ID_RECORD = "job.json"
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
